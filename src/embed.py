@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores.utils import filter_complex_metadata
-from get_vector_db import get_vector_db
+from src.get_vector_db import get_vector_db
 
 TMP_DIR = os.getenv('TMP_DIR', './tmp')
 

@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 from flask import Flask, request, jsonify, make_response
 from flask_restx import Resource, Api, fields
 from werkzeug.datastructures import FileStorage
-from embed import embed
-from query import query
+from src.embed import embed
+from src.query import query
 
 # Carregar variáveis de ambiente
 load_dotenv()

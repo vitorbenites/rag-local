@@ -3,7 +3,7 @@ from langchain_community.chat_models import ChatOllama
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
-from get_vector_db import get_vector_db
+from src.get_vector_db import get_vector_db
 
 LLM_MODEL = os.getenv('LLM_MODEL', 'llama3.1')
 OLLAMA_URL = os.getenv('OLLAMA_URL', 'http://localhost:11434')
