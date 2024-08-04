@@ -26,7 +26,8 @@ api = Api(app, title='RAG Ollama Chroma',
 # Modelos
 query_model = api.model('Fazer uma pergunta', {
     'system': fields.String(example='Você é um assistente de IA que fornece' +
-                            ' respostas concisas e precisas'),
+                            ' respostas concisas e precisas baseado ' +
+                            'em documentos.'),
     'prompt': fields.String(example='Faça uma pergunta'),
     'temperature': fields.Float(example=0.7)
 })
@@ -73,8 +74,8 @@ class Query(Resource):
         Método post
         '''
         data = request.get_json()
-        response = query(data.get('system'), data.get(
-            'prompt'), data.get('temperature'))
+        response = query(system=data.get('system'), input=data.get(
+            'prompt'), temperature=data.get('temperature'))
         if response:
             return make_response(jsonify({"message": response}), 200)
         return make_response(jsonify({"error": "Algo deu errado."}), 400)

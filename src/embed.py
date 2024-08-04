@@ -32,7 +32,7 @@ def load_and_split_data(file_path):
     '''
     Função para carregar e dividir os dados do arquivo pdf.
     '''
-    loader = UnstructuredPDFLoader(file_path=file_path)
+    loader = UnstructuredPDFLoader(file_path=file_path, language="por")
     data = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1024, chunk_overlap=100)
